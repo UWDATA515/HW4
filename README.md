@@ -19,7 +19,7 @@ The function takes 3 parameters:
 2. `data` - 2 dimensional numpy array of shape (m, **n+1**)). `m` denotes the number of samples and `n` is the number of variables in each sample. `+1` is for the labels in each sample - the last column in the sample. `m` must be at least as large as `n_neighbors`. `n` must be at least 1 (so the 2-dimensional array must be *at least* (m, 2)). All samples must have the same value of `n`. All samples and labels must be numeric.
 3. `query` - 1 dimensional numpy array, shape (n,). `n` must be the same as in the `data` argument.
 
-The algorithm returns the predicted label for query (a single numeric value) or raises an appropriate exception (such as `ValueError`) when inappropriate inputs are passed for any argument (wrong type, wrong shape, or wrong value).
+The algorithm returns the predicted label for query (a single numeric value) or raises an appropriate exception (such as `TypeError` for when the type is wrong or `ValueError` when the content/shape of the input is wrong) when inappropriate inputs are passed for any argument (wrong type, wrong shape, or wrong value).
 
 #### Example inputs and outputs
 
@@ -58,13 +58,13 @@ c. All appropriate *edge* tests you find useful for the algorithm (at least four
 
 Use a `__main__` block to run the tests (1pt).
 
-Note that the creation of data to test your function is up to you. Other than the example above, we do not provide a dataset.
+Note that the creation of data to test your function is up to you. Other than the example above, we do not provide a dataset, but we HIGHLY recommend that you come up with a few more complicated examples on your own, because the example above will not exercise all the situations.
 
 ### 4. Implement `knn_regression` to calculate the k-nearest neighbors algorithm.
 
-(2 pts for algorithm, 1 pt for exceptions)
+(2 pts for algorithm, 2 pts for exceptions)
 
-We are not grading your homework based on computational complexity or on dimensionality larger than 4, so don't worry about inefficient algorithms. You may NOT use an existing library to do your k-nearest-neighbors calculation automatically.
+We are not grading your homework based on computational complexity or on dimensionality larger than 4, so don't worry about inefficient algorithms. You may NOT use an existing library to do your k-nearest-neighbors calculation automatically. Do not do any rounding.
 
 At the end of this step, if you rerun the tests, your tests should now be passing.
 

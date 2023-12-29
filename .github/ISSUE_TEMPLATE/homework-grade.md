@@ -8,12 +8,12 @@ assignees: ''
 
 Homework evaluation rubric: 
 
-? / 12 points
+? / 13 points
 
 - [ ] proper directory structure (1pt)
 - [ ] `knn_regression` interface in `knn.py` adheres to specification (1pt)
 - [ ] `knn_regression` function implementation in `knn.py` (2pt)
-- [ ] `knn_regression` function in `knn.py` uses exceptions for argument handling (1pt) 
+- [ ] `knn_regression` function in `knn.py` uses appropriate exceptions for argument handling (2pt) 
 - [ ] `test_knn.py` uses the `unittest` framework (1pt)
 - [ ] `test_knn.py` uses a `__main__` block to run the tests (1pt)
 - [ ] `test_knn.py` has a *smoke* test (1pt)
