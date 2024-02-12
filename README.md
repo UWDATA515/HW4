@@ -19,7 +19,7 @@ The function takes 3 parameters:
 2. `data` - 2 dimensional numpy array of shape (m, **n+1**)). `m` denotes the number of samples and `n` is the number of variables in each sample. `+1` is for the labels in each sample - the last column in the sample. `m` must be at least as large as `n_neighbors`. `n` must be at least 1 (so the 2-dimensional array must be *at least* (m, 2)). All samples must have the same value of `n`. All samples and labels must be numeric.
 3. `query` - 1 dimensional numpy array, shape (n,). `n` must be the same as in the `data` argument.
 
-The algorithm returns the predicted label for query (a single numeric value) or raises an appropriate exception (such as `TypeError` for when the type is wrong or `ValueError` when the content/shape of the input is wrong) when inappropriate inputs are passed for any argument (wrong type, wrong shape, or wrong value).
+The function returns the predicted label for query (a single numeric value) or raises an appropriate exception (such as `TypeError` for when the type is wrong or `ValueError` when the content/shape of the input is wrong) when inappropriate inputs are passed for any argument (wrong type, wrong shape, or wrong value).
 
 #### Example inputs and outputs
 
@@ -44,7 +44,7 @@ This is a visualization of the example inputs.
 
 ### 3. Create a Python module `test_knn.py` inside the `tests` folder.
 
-Inside `test_knn.py`, write a series of test cases to confirm the validity of your implementation in `Step 2`, using the `unittest` framework (1pt). 
+Inside `test_knn.py`, write a series of test cases to confirm the validity of your implementation in `Step 2`, using the `unittest` framework (1pt).
 
 At the end of this step, most of your tests should be **failing** because you haven't written the implementation of the function yet!
 
@@ -56,7 +56,7 @@ b. At least two *one-shot* tests (2pt).
 
 c. All appropriate *edge* tests you find useful for the algorithm (at least four) (2 pts).
 
-Use a `__main__` block to run the tests (1pt).
+Use a `__main__` block to run the tests (1pt). You should be able to run the unit tests from the ROOT of your repository using the commands `python -m unittest discover` and `python -m tests.test_knn`.
 
 Note that the creation of data to test your function is up to you. Other than the example above, we do not provide a dataset, but we HIGHLY recommend that you come up with a few more complicated examples on your own, because the example above will not exercise all the situations.
 
@@ -73,15 +73,23 @@ At the end of this step, if you rerun the tests, your tests should now be passin
 ```
 A. For each example in the data:
 
-    A.1 Calculate the distance between the query example and the current example from the data
+    A.1 Calculate the distance between the query example and the current example
+        from the data. Check out the `math` module, which has a function which can
+        help you find the distance between two points.
     
-    A.2 Add the distance and the index of the example to an ordered collection
+    A.2 Add the distance and the label of the current example to an ordered
+        collection (ie a list).
 
-B. Sort the ordered collection of distances and indices from smallest to largest (in ascending order) by the distances
+B. Sort the ordered collection of distances and labels from smallest to largest (in
+   ascending order) by the distances. Hint: check out Python's sorting documentation -
+   The itemgetter function might be helpful here.
 
-C. Pick the first K entries from the sorted collection
+C. Pick the first K entries from the sorted collection.
 
-D. Get the labels of the selected K entries
+D. Get the labels of the selected K entries.
 
-E. Return the mean of the K labels
+E. Return the mean of the K labels. Mean is defined as summing up all the labels,
+   then dividing by K.
 ```
+
+Link to [Python's sorting documentation](https://docs.python.org/3/howto/sorting.html#operator-module-functions) for the Part B hint.
