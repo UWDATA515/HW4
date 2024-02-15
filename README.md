@@ -12,7 +12,7 @@ Create two directories at the base directory of the homework repository: `knn` a
 
 Inside `knn.py`, write a function interface, `knn_regression(n_neighbors, data, query)` for a function that implements the k-nearest neighbors algorithm for regression. (1pt)
 
-At this time, write ONLY the interface. We are practicing test-driven development - write the interface first, then proceed to the next step, without any implementation. To make your code valid, you should return a dummy value or throw an exception, but you do not do a real computation until after you have written tests.
+At this time, write ONLY the interface. We are practicing test-driven development - write the interface first, then proceed to the next step, without any implementation. To make your code valid, you should return a dummy value or throw an exception, but you do not do a real computation until after you have written tests. Commit your code after this step.
 
 The function takes 3 parameters:
 1. Parameter `k`, or `n_neighbors`. `n_neighbors` must be an integer and must be greater than 0.
@@ -52,13 +52,15 @@ These tests should contain:
 
 a. At least one *smoke* test (1pt).
 
-b. At least two *one-shot* tests (2pt).
+b. At least two *one-shot* tests, BOTH of which are DIFFERENT from the example we gave above. It would be a good idea to test the provided example, too, but it still does NOT count for your two one-shot tests. Pattern tests are acceptable, but each pattern tests counts as only one one-shot test (2pt).
 
 c. All appropriate *edge* tests you find useful for the algorithm (at least four) (2 pts).
 
 Use a `__main__` block to run the tests (1pt). You should be able to run the unit tests from the ROOT of your repository using the commands `python -m unittest discover` and `python -m tests.test_knn`.
 
 Note that the creation of data to test your function is up to you. Other than the example above, we do not provide a dataset, but we HIGHLY recommend that you come up with a few more complicated examples on your own, because the example above will not exercise all the situations.
+
+Commit your code after this step.
 
 ### 4. Implement `knn_regression` to calculate the k-nearest neighbors algorithm.
 
